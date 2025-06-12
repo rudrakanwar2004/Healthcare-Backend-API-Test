@@ -85,8 +85,8 @@ This project is a secure backend system for a healthcare application, built usin
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/healthcare-backend.git
-cd healthcare-backend
+git clone https://github.com/rudrakanwar2004/Healthcare-Backend-API-Test.git
+cd Healthcare-Backend-API-Test
 ```
 ### 2. Create .env File
 
