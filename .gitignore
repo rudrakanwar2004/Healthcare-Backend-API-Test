@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.log
+
+# Django
+db.sqlite3
+*.pot
+*.pyc
+local_settings.py
+media/
+staticfiles/
+
+# Virtual environments
+myvenv/
+venv/
+.venv/
+ENV/
+.env
+
+# Secrets and environment
+.env
+*.secret
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# Pytest
+.pytest_cache/
+.cache/
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Migrations (optional)
+**/migrations/*.py
+!**/migrations/__init__.py
