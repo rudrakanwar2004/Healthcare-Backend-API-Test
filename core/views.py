@@ -1,4 +1,6 @@
 from rest_framework import generics, permissions
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from .models import Patient, Doctor, PatientDoctorMapping
 from .serializers import PatientSerializer, DoctorSerializer, MappingSerializer
 
@@ -34,7 +36,16 @@ class MappingListCreateView(generics.ListCreateAPIView):
     serializer_class = MappingSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+class MappingsByPatientView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, patient_id):
+        mappings = PatientDoctorMapping.objects.filter(patient_id=patient_id)
+        serializer = MappingSerializer(mappings, many=True)
+        return Response(serializer.data)
+    
 class MappingDetailView(generics.RetrieveDestroyAPIView):
     queryset = PatientDoctorMapping.objects.all()
     serializer_class = MappingSerializer
     permission_classes = [permissions.IsAuthenticated]
+    
